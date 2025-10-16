@@ -40,10 +40,18 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
 
     return Scaffold(
-      body: Center(
+
+      body: Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage("assets/paleking.jpg"),
+            fit: BoxFit.cover,
+          ),
+        ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+
             Container(
               margin: const EdgeInsets.all(10.0),
               width: 240,
@@ -100,6 +108,8 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Text('Sign Up'),
             ),
           ],
+
+
         ),
       ),
     );
