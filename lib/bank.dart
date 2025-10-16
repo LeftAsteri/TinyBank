@@ -57,7 +57,7 @@ class _Bank extends State<Bank> {
                           amount = amount = double.parse(text2);
                           amount = amount;
                           amount = amount.round() as double;
-                          amount = amount / 100;
+                          amount = amount * 0.01;
                         })),
                     ElevatedButton(onPressed: () {
                       setState(() {
