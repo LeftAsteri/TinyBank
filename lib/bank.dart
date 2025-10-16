@@ -36,16 +36,13 @@ class _Bank extends State<Bank> {
                       child: TextField(
                         onChanged: (text) {
                           amount = double.parse(text);
-                          amount = amount * 100;
-                          amount = amount.round() as double;
-                          // = amount * 0.01;
                         },
                       ),
                     ),
                     ElevatedButton(
                       onPressed: () {
                         setState(() {
-                          cash = cash + (amount / 100);
+                          cash = cash + (((amount*100).round()) / 100);
                         });
                       },
                       child: Text('Deposit'),
@@ -62,16 +59,14 @@ class _Bank extends State<Bank> {
                       child: TextField(
                         onChanged: (text2) {
                           amount = amount = double.parse(text2);
-                          amount = amount;
-                          amount = amount.round() as double;
-                          //amount = amount * 0.01;
+
                         },
                       ),
                     ),
                     ElevatedButton(
                       onPressed: () {
                         setState(() {
-                          cash = cash - (amount / 100);
+                          cash = cash - (((amount*100).round()) / 100);
                         });
                       },
                       child: Text('Withdrawl'),
