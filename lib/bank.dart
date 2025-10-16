@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_training_template/main.dart';
 import 'package:flutter_training_template/sign.dart';
-import 'management.dart';
 
 class Bank extends StatefulWidget {
   const Bank({super.key});
@@ -32,42 +30,56 @@ class _Bank extends State<Bank> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text('Deposit'),
-                    Container(width: 200,
-                        height: 100,
-                        child: TextField(onChanged: (text) {
+                    Container(
+                      width: 200,
+                      height: 100,
+                      child: TextField(
+                        onChanged: (text) {
                           amount = double.parse(text);
                           amount = amount * 100;
                           amount = amount.round() as double;
-                          amount = amount * 0.01;
-                        })),
-                    ElevatedButton(onPressed: () {
-                      setState(() {
-                        cash = cash + (amount / 100);
-                      });
-                    }, child: Text('Deposit'))
+                          // = amount * 0.01;
+                        },
+                      ),
+                    ),
+                    ElevatedButton(
+                      onPressed: () {
+                        setState(() {
+                          cash = cash + (amount / 100);
+                        });
+                      },
+                      child: Text('Deposit'),
+                    ),
                   ],
                 ),
                 Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text('Withdrawl'),
-                    Container(width: 200,
-                        height: 100,
-                        child: TextField(onChanged: (text2) {
+                    Container(
+                      width: 200,
+                      height: 100,
+                      child: TextField(
+                        onChanged: (text2) {
                           amount = amount = double.parse(text2);
                           amount = amount;
                           amount = amount.round() as double;
-                          amount = amount * 0.01;
-                        })),
-                    ElevatedButton(onPressed: () {
-                      setState(() {
-                        cash = cash - (amount / 100);
-                      });
-                    }, child: Text('Withdrawl'))
+                          //amount = amount * 0.01;
+                        },
+                      ),
+                    ),
+                    ElevatedButton(
+                      onPressed: () {
+                        setState(() {
+                          cash = cash - (amount / 100);
+                        });
+                      },
+                      child: Text('Withdrawl'),
+                    ),
                   ],
-                )
+                ),
               ],
-            )
+            ),
           ],
         ),
       ),
